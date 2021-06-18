@@ -1,0 +1,24 @@
+[alias]
+  a = add
+  b   = branch
+  c   = commit --verbose         # Commit your changes
+  co  = checkout       # Checkout a branch
+  cob = checkout -b    # Checkout a new not yet existing branch
+  del = branch -D
+  f   = fetch -p       # Fetch from a repository and prune any remote-tracking references that no longer exist on the remote.
+  fa  = fetch --all
+  p   = push           # Push you changes to a remote
+  pf  = push -f
+  s = status
+  save = !git add -A && git commit -m 'SAVEPOINT' --no-verify
+  undo = reset HEAD~1 --mixed
+  wip = commit -am "WIP" --no-verify
+[user]
+	name = Luis Pinto
+	email = luis.moraispinto@farfetch.com
+[core]
+	editor = code --wait
+[diff]
+  tool = default-difftool
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE
