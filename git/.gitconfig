@@ -7,6 +7,7 @@
   del = branch -D
   f   = fetch -p       # Fetch from a repository and prune any remote-tracking references that no longer exist on the remote.
   fa  = fetch --all
+  log   = log --pretty=format:'%C(blue)%h%C(red)%d %C(white)%s - %C(cyan)%cn, %C(green)%cr'
   p   = push           # Push you changes to a remote
   pf  = push -f
   s = status
