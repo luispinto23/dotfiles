@@ -2,24 +2,32 @@
   a = add
   b   = branch
   c   = commit -m         # Commit your changes
+  cane   = commit --amend --no-edit 
   co  = checkout       # Checkout a branch
   cob = checkout -b    # Checkout a new not yet existing branch
   del = branch -D
   f   = fetch -p       # Fetch from a repository and prune any remote-tracking references that no longer exist on the remote.
   fa  = fetch --all
   l   = log --pretty=format:'%C(blue)%h%C(red)%d %C(white)%s - %C(cyan)%cn, %C(green)%cr'
-  p   = push           # Push you changes to a remote
-  pf  = push -f
+  ps   = push           # Push you changes to a remote
+  pl  = pull           # Push you changes to a remote
+  pf  = push --force-with-lease
   s = status
   save = !git add -A && git commit -m 'SAVEPOINT' --no-verify
   undo = reset HEAD~1 --mixed
   wip = commit -am "WIP" --no-verify
 [user]
-        name = Luis Pinto
-        email = luis.moraispinto@farfetch.com
+        name = Luís Pinto
+        email = luispinto23@gmail.com
 [core]
         editor = code --wait
 [diff]
   tool = default-difftool
 [difftool "default-difftool"]
     cmd = code --wait --diff $LOCAL $REMOTE
+[push]
+	default = current
+
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+
