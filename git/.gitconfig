@@ -1,5 +1,5 @@
 [alias]
-  a = add
+  a   = add
   b   = branch
   c   = commit -m         # Commit your changes
   cane   = commit --amend --no-edit 
@@ -13,6 +13,8 @@
   pl  = pull           # Push you changes to a remote
   pf  = push --force-with-lease
   s = status
+  sts = stash
+  stsa = stash apply
   save = !git add -A && git commit -m 'SAVEPOINT' --no-verify
   undo = reset HEAD~1 --mixed
   wip = commit -am "WIP" --no-verify
@@ -20,7 +22,8 @@
         name = Luís Pinto
         email = luispinto23@gmail.com
 [core]
-        editor = code --wait
+        editor = code --wait	
+        autocrlf = input
 [diff]
   tool = default-difftool
 [difftool "default-difftool"]
