@@ -10,18 +10,23 @@ return {
 	--     },
 	--   },
 	-- },
-	-- {
-	-- 	"github/copilot.vim",
-	-- 	init = function()
-	-- 		vim.g.copilot_no_tab_map = true
-	-- 	end,
-	-- 	config = function()
-	-- 		vim.keymap.set("i", "<C-l>", [[copilot#Accept("\<CR>")]], {
-	-- 			silent = true,
-	-- 			expr = true,
-	-- 			script = true,
-	-- 			replace_keycodes = false,
-	-- 		})
-	-- 	end,
-	-- },
+	{
+		"github/copilot.vim",
+		init = function()
+			vim.g.copilot_no_tab_map = true
+			vim.g.copilot_filetypes = { ["*"] = false }
+		end,
+		config = function()
+			vim.keymap.set("i", "<M-]>", "copilot#Suggest()", {
+				expr = true,
+				replace_keycodes = false,
+			})
+			vim.keymap.set("i", "<C-y>", 'copilot#Accept("")', {
+				silent = true,
+				expr = true,
+				script = true,
+				replace_keycodes = false,
+			})
+		end,
+	},
 }
