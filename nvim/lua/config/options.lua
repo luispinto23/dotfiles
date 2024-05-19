@@ -8,3 +8,5 @@ vim.cmd("set shiftwidth=2")
 vim.cmd("set scrolloff=8")
 local opt = vim.opt
 opt.wrap = true
+
+vim.g.codeium_manual = true
